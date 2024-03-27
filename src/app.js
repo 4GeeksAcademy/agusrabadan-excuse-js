@@ -18,7 +18,9 @@ let generateExcuse = () => {
   let thing=["the money","my bike", "my food", "the tickets"];
   let when =["last night.","yesterday.", "last week", "an hour ago."]
 
-  let whoIndex= Math.floor(Math.random()*4);
+    //Metodo normal//
+
+  /*  let whoIndex= Math.floor(Math.random()*4);
   let actionIndex= Math.floor(Math.random()*4);
   let thingIndex= Math.floor(Math.random()*4);
   let whenIndex= Math.floor(Math.random()*4);
@@ -26,9 +28,15 @@ let generateExcuse = () => {
   
 
   return who[whoIndex] + " " + action[actionIndex] + " " + thing[thingIndex] + " " + when[whenIndex];
+  */
 
-  
+  //Con Loop Map
+  let arrayExcusas=[who,action,thing,when];
+  let excusa= arrayExcusas.map((elementoArray)=>{
+    return elementoArray[(Math.floor(Math.random)*elementoArray.length)]
+  })
 
+return excusa.join("");
 };
 
 
